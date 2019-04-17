@@ -16,7 +16,7 @@ class CharacterListView extends React.Component {
   render() {
     if (this.props.fetching) {
       return (
-        <strong>Loading...</strong>
+        <div class="loading"><img src="https://media.giphy.com/media/y1ZBcOGOOtlpC/200.gif" /></div>
       )
     }
     return (
