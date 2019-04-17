@@ -2,7 +2,7 @@ import { PEOPLE_FETCH, PEOPLE_SUCCESS, PEOPLE_FAILURE } from "../actions";
 
 const initialState = {
   characters: [],
-  isFetching: false,
+  fetching: false,
   error: null
 };
 
@@ -14,14 +14,15 @@ export const charsReducer = (state = initialState, action) => {
     case PEOPLE_FETCH:
       return {
         ...state,
-        isFetching: true,
+        fetching: true,
         error: null
       }
     case PEOPLE_SUCCESS:
+      console.log("Success", action.payload)
       return {
         ...state,
         characters: action.payload,
-        isFetching: false,
+        fetching: false,
         error: null
       }
     case PEOPLE_FAILURE:

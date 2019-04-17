@@ -10,7 +10,7 @@ export const PEOPLE_FAILURE = "PEOPLE_FAILURE";
 
 export const getPeople = () => dispatch => {
    dispatch({type: PEOPLE_FETCH});
-   axios.get("https://swapi.co/api/people")
+   axios.get(`https://swapi.co/api/people`)
       .then(res => dispatch({type: PEOPLE_SUCCESS, payload: res.data.results}))
       .catch(err => dispatch({type: PEOPLE_FAILURE, payload: err}));
 }
